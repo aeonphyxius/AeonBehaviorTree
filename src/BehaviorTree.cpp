@@ -35,6 +35,7 @@ void BehaviorTree::Execute(Entity * entity, BlackBoard * black_board)
 		return;
 	}
 	black_board->entity = entity;
+	black_board->ticks = 0.0f;
 
 	if (black_board == nullptr)
 	{

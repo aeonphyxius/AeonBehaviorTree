@@ -20,13 +20,14 @@ void SequenceNode::Execute(BlackBoard * black_board)
 		return;
 	}	
 
-	SetNodeState(RUNNING);
-
-	if (child_nodes[current]->GetNodeState() == IDLE ||
-		child_nodes[current]->GetNodeState() == RUNNING)
+	if (GetNodeState() != RUNNING)
 	{
-		child_nodes[current]->Execute(black_board);
+		SetNodeState(RUNNING);
+		current = 0;
 	}
+
+	child_nodes[current]->Execute(black_board);
+
 	
 	if (child_nodes[current]->GetNodeState() == FAILURE)
 	{

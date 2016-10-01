@@ -32,6 +32,13 @@ void RepeaterNode::Execute(BlackBoard * black_board)
 		return;
 	}
 
+	if (GetNodeState() != RUNNING)
+	{
+		SetNodeState(RUNNING);
+		current = 0;
+	}
+
+
 	Utils::Log(" RepeaterNode Node: ", name, " repetition: " , current );
 	
 	childNode->Execute(black_board);
@@ -41,12 +48,8 @@ void RepeaterNode::Execute(BlackBoard * black_board)
 		++current;
 	}
 	
-	if (current < num_repeats)
-	{
-		SetNodeState(RUNNING);
-	}
-	else
-	{
+	if (current >= num_repeats)
+	{		
 		SetNodeState(childNode->GetNodeState());
 		Utils::Log(" RepeaterNode Node: ", name, " returning ", state, "as the last rep. state");
 	}

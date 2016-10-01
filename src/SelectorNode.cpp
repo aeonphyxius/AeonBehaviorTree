@@ -18,7 +18,11 @@ void SelectorNode::Execute(BlackBoard * black_board)
 		return;
 	}
 
-	SetNodeState(RUNNING);
+	if (GetNodeState() != RUNNING)
+	{
+		SetNodeState(RUNNING);
+		current = 0;
+	}	
 
 	if (child_nodes[current]->GetNodeState() == IDLE ||
 		child_nodes[current]->GetNodeState() == RUNNING)

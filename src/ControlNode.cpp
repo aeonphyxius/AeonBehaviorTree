@@ -6,7 +6,7 @@ ControlNode::ControlNode(std::string name)
 	: TreeNode(name)
 	, current(0)
 {
-	type = Control;
+	state = IDLE;
 }
 
 ControlNode::~ControlNode() {}
