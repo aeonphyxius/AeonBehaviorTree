@@ -11,7 +11,7 @@ namespace AeonBehaviorTree
 	{
 	public:		
 		ControlNode(std::string name);
-		~ControlNode();
+		~ControlNode() = default;
 
 		virtual void SetNodeState(NodeState new_state) { state = new_state; }
 		virtual NodeState GetNodeState() { return state; }

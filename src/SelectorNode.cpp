@@ -6,7 +6,6 @@ SelectorNode::SelectorNode(std::string name) : ControlNode(name)
 {
 }
 
-SelectorNode::~SelectorNode() {}
 
 void SelectorNode::Execute(BlackBoard * black_board)
 {

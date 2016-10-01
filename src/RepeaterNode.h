@@ -12,7 +12,7 @@ namespace AeonBehaviorTree
 
 		RepeaterNode(std::string name);
 		RepeaterNode(std::string name, int num_repeats);
-		~RepeaterNode();
+		~RepeaterNode() = default;
 
 		void Execute(BlackBoard * black_board);
 		void SetNumRepeats(int repeats) { num_repeats = repeats; }

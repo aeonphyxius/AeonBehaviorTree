@@ -9,8 +9,6 @@ ControlNode::ControlNode(std::string name)
 	state = IDLE;
 }
 
-ControlNode::~ControlNode() {}
-
 void ControlNode::AddChild(TreeNode* child)
 {
 

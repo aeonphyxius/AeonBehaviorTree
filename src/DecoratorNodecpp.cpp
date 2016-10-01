@@ -7,7 +7,3 @@ DecoratorNode::DecoratorNode(std::string name) : TreeNode(name)
 {
 }
 
-DecoratorNode::~DecoratorNode()
-{
-}
-

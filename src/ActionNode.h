@@ -1,5 +1,5 @@
-#ifndef ACTIONNODE_H
-#define ACTIONNODE_H
+#ifndef ACTION_NODE_H
+#define ACTION_NODE_H
 
 #include "TreeNode.h"
 
@@ -19,4 +19,4 @@ namespace AeonBehaviorTree
 	};
 }
 
-#endif
+#endif /*ACTION_NODE_H*/

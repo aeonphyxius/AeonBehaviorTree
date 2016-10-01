@@ -11,7 +11,7 @@ namespace AeonBehaviorTree
 	public:
 	
 		DecoratorNode(std::string name);
-		~DecoratorNode();
+		~DecoratorNode() = default;
 		void setChild(TreeNode * newChild) { child = newChild; }
 		virtual void SetNodeState(NodeState new_state) { state = new_state; }
 		virtual NodeState GetNodeState() { return state; }

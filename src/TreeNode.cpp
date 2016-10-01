@@ -11,13 +11,3 @@ TreeNode::TreeNode(std::string node_name)
 TreeNode::~TreeNode() 
 {
 }
-
-NodeState TreeNode::GetNodeState()
-{	
-	return state;
-}
-
-void TreeNode::SetNodeState(NodeState new_state)
-{
-	state = new_state;	
-}

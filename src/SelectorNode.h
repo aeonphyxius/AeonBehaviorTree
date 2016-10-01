@@ -1,5 +1,5 @@
-#ifndef SELECTORNODE_H
-#define SELECTORNODE_H
+#ifndef SELECTOR_NODE_H
+#define SELECTOR_NODE_H
 
 #include "ControlNode.h"
 
@@ -9,9 +9,9 @@ namespace AeonBehaviorTree
 	{
 	public:		
 		SelectorNode(std::string name);
-		~SelectorNode();	
+		~SelectorNode() = default;
 		void Execute(BlackBoard * black_board);
 	};
 }
 
-#endif
+#endif /*SELECTOR_NODE_H*/

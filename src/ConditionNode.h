@@ -11,10 +11,11 @@ namespace AeonBehaviorTree
 	public:		
 		ConditionNode(std::string name);
 		~ConditionNode() = default;
-				
-		virtual void Execute(BlackBoard * black_board) = 0;				
+		
 		virtual void SetNodeState(NodeState new_state) { state = new_state; }
 		virtual NodeState GetNodeState() { return state; }
+
+		virtual void Execute(BlackBoard * black_board) = 0;
 	};
 }
 

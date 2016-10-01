@@ -8,8 +8,6 @@ ControlNode(name)
 {	
 }
 
-SequenceNode::~SequenceNode() {}
-
 void SequenceNode::Execute(BlackBoard * black_board)
 {
 	Utils::Log("-- SequenceNode : ", name, " Execute");

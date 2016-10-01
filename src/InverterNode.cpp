@@ -6,8 +6,6 @@ InverterNode::InverterNode(std::string name) : DecoratorNode(name)
 {
 }
 
-InverterNode::~InverterNode() {}
-
 void InverterNode::Execute(BlackBoard * black_board)
 {
 	TreeNode *childNode = getChild();

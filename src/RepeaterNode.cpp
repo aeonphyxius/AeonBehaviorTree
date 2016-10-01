@@ -17,10 +17,6 @@ RepeaterNode::RepeaterNode(std::string name, int num_repeats) :
 {
 }
 
-RepeaterNode::~RepeaterNode() 
-{
-
-}
 
 void RepeaterNode::Execute(BlackBoard * black_board)
 {

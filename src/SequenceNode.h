@@ -9,7 +9,7 @@ namespace AeonBehaviorTree
 	{
 	public:		
 		SequenceNode(std::string Name);
-		~SequenceNode();			
+		~SequenceNode() = default;
 		
 		void Execute(BlackBoard * black_board);
 	};
