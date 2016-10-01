@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <string>
-
+#include "BlackBoard.h"
 namespace AeonBehaviorTree
 {	
 	enum NodeType { Action, Condition, Control };
@@ -31,21 +31,18 @@ namespace AeonBehaviorTree
 		NodeType type;
 
 		// The constructor and the distructor
-		TreeNode(std::string Name);
+		TreeNode(std::string node_name);
 		~TreeNode();
 
 		// The method that retrive the state of the node
 		// (conditional waiting and mutual access)
 		NodeState GetNodeState();
-		void SetNodeState(NodeState new_state);
+		
 		
 		
 		// The method that is going to be executed by the thread
-		virtual void Execute() = 0;
-		//virtual int GetType() = 0;
-		virtual void WriteState(NodeState new_state) = 0;		
-		virtual int GetDepth() = 0;
-
+		virtual void Execute(BlackBoard * black_board) = 0;
+		virtual void SetNodeState(NodeState new_state) = 0;
 	};
 }
 

@@ -13,6 +13,7 @@ namespace AeonBehaviorTree
 		DecoratorNode(std::string name);
 		~DecoratorNode();
 		void setChild(TreeNode * newChild) { child = newChild; }
+		virtual void SetNodeState(NodeState new_state) { state = new_state; }
 	
 	protected:
 		TreeNode* getChild() const { return child; }

@@ -11,9 +11,9 @@ namespace AeonBehaviorTree
 		// Constructor
 		SequenceNode(std::string Name);
 		~SequenceNode();
-		int GetType();
+		virtual void SetNodeState(NodeState new_state) { state = new_state; }		
 		
-		void Execute();
+		void Execute(BlackBoard * black_board);
 	};
 }
 

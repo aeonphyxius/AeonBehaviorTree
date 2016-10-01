@@ -2,9 +2,9 @@
 
 using namespace AeonBehaviorTree;
 
-TreeNode::TreeNode(std::string name)
+TreeNode::TreeNode(std::string node_name)
 {	
-	name = name;	
+	name = node_name;
 	state = IDLE;
 }
 

@@ -9,8 +9,7 @@ namespace AeonBehaviorTree
 {
 	class ControlNode : public TreeNode
 	{
-	public:
-		// Constructor
+	public:		
 		ControlNode(std::string name);
 		~ControlNode();
 

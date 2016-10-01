@@ -13,7 +13,7 @@ namespace AeonBehaviorTree
 		InverterNode(std::string name);
 		~InverterNode();
 		
-		void Execute();
+		void Execute(BlackBoard * black_board);
 	};
 }
 

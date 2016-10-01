@@ -14,7 +14,7 @@ namespace AeonBehaviorTree
 		~ConditionNode();
 
 		
-		virtual void Execute() = 0;
+		virtual void Execute(BlackBoard * black_board) = 0;
 				
 		void WriteState(NodeState new_state);
 		//int GetType();

@@ -81,9 +81,12 @@
     <ClCompile Include="..\src\ConditionNode.cpp" />
     <ClCompile Include="..\src\ControlNode.cpp" />
     <ClCompile Include="..\src\DecoratorNodecpp.cpp" />
+    <ClCompile Include="..\src\Dog.cpp" />
+    <ClCompile Include="..\src\EatAction.cpp" />
     <ClCompile Include="..\src\InverterNode.cpp" />
     <ClCompile Include="..\src\LeafNode.cpp" />
     <ClCompile Include="..\src\main.cpp" />
+    <ClCompile Include="..\src\PlayAction.cpp" />
     <ClCompile Include="..\src\RepeaterNode.cpp" />
     <ClCompile Include="..\src\SelectorNode.cpp" />
     <ClCompile Include="..\src\SequenceNode.cpp" />
@@ -92,11 +95,18 @@
   <ItemGroup>
     <ClInclude Include="..\src\ActionNode.h" />
     <ClInclude Include="..\src\BehaviorTree.h" />
+    <ClInclude Include="..\src\BlackBoard.h" />
+    <ClInclude Include="..\src\BoredCondition.h" />
     <ClInclude Include="..\src\ConditionNode.h" />
     <ClInclude Include="..\src\ControlNode.h" />
     <ClInclude Include="..\src\DecoratorNode.h" />
+    <ClInclude Include="..\src\Dog.h" />
+    <ClInclude Include="..\src\EatAction.h" />
+    <ClInclude Include="..\src\Entity.h" />
+    <ClInclude Include="..\src\HungryCondition.h" />
     <ClInclude Include="..\src\InverterNode.h" />
     <ClInclude Include="..\src\LeafNode.h" />
+    <ClInclude Include="..\src\PlayAction.h" />
     <ClInclude Include="..\src\RepeaterNode.h" />
     <ClInclude Include="..\src\SelectorNode.h" />
     <ClInclude Include="..\src\SequenceNode.h" />

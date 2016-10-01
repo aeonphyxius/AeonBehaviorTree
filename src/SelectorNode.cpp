@@ -8,7 +8,7 @@ SelectorNode::SelectorNode(std::string name) : ControlNode(name)
 
 SelectorNode::~SelectorNode() {}
 
-void SelectorNode::Execute()
+void SelectorNode::Execute(BlackBoard * black_board)
 {
 	state = FAILURE;
 
@@ -16,7 +16,7 @@ void SelectorNode::Execute()
 	{
 		if (child->type == Action)
 		{
-			child->Execute();
+			child->Execute(black_board);
 			if (child->GetNodeState() == SUCCESS)
 			{
 				SetNodeState(SUCCESS);

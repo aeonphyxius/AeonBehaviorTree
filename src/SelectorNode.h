@@ -7,13 +7,12 @@ namespace AeonBehaviorTree
 {
 	class SelectorNode : public ControlNode
 	{
-	public:
-		// Constructor
+	public:		
 		SelectorNode(std::string name);
 		~SelectorNode();
 		int GetType();
 		// The method that is going to be executed by the thread
-		void Execute();
+		void Execute(BlackBoard * black_board);
 	};
 }
 

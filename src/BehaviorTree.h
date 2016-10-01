@@ -1,19 +1,24 @@
 #ifndef BEHAVIORTREE_H
 #define BEHAVIORTREE_H
 
-#include "SelectorNode.h"
-#include "SequenceNode.h"
+#include "BlackBoard.h"
+#include "ControlNode.h"
+#include "Entity.h"
 
-//#include <Exceptions.h>
+namespace AeonBehaviorTree
+{
+	class BehaviorTree
+	{
+	public:
+		BehaviorTree();
+		~BehaviorTree();
+		void Execute(Entity *dog, BlackBoard * black_board);
+		void AddRootNode( ControlNode * new_root_node);
 
-#include <string>
-#include <map>
-
-#include <typeinfo>
-#include <math.h>       /* pow */
-
-
-void Execute(AeonBehaviorTree::ControlNode* root, int TickPeriod_milliseconds);
+	private: 
+		ControlNode * root;
+	};
+}
 
 
-#endif
+#endif /* BEHAVIORTREE_H */

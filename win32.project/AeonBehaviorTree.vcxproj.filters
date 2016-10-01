@@ -25,6 +25,15 @@
     <Filter Include="Source Files\Tree">
       <UniqueIdentifier>{bf2b142e-bf88-44c5-b660-fd823c2d3269}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\DogBehaviors">
+      <UniqueIdentifier>{a99110c3-3639-467f-801b-45c1ada8030d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Entities">
+      <UniqueIdentifier>{cd363a90-beae-4e49-a0af-170d85d79f53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\DogBehaviors">
+      <UniqueIdentifier>{ccc56b74-0814-40c5-ba4a-a07f024f504e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\main.cpp">
@@ -63,6 +72,15 @@
     <ClCompile Include="..\src\DecoratorNodecpp.cpp">
       <Filter>Source Files\Tree</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\Dog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\PlayAction.cpp">
+      <Filter>Source Files\DogBehaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\EatAction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\ActionNode.h">
@@ -100,6 +118,27 @@
     </ClInclude>
     <ClInclude Include="..\src\Utils.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\BlackBoard.h">
+      <Filter>Header Files\Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\EatAction.h">
+      <Filter>Header Files\DogBehaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\PlayAction.h">
+      <Filter>Header Files\DogBehaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\HungryCondition.h">
+      <Filter>Header Files\DogBehaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\BoredCondition.h">
+      <Filter>Header Files\DogBehaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Entity.h">
+      <Filter>Header Files\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Dog.h">
+      <Filter>Header Files\Entities</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

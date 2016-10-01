@@ -12,13 +12,10 @@ namespace AeonBehaviorTree
 		ActionNode(std::string Name);
 		~ActionNode();
 
+		virtual void SetNodeState(NodeState new_state) { state = new_state; }
+
 		// The method that is going to be executed by the thread
-		virtual void Execute() = 0;
-				
-		// Methods used to access the node state without the
-		// conditional waiting (only mutual access)
-		void WriteState(NodeState StateToBeSet);
-		int GetType() const ;
+		virtual void Execute(BlackBoard * black_board) = 0;
 	};
 }
 

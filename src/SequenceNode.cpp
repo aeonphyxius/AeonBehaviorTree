@@ -1,4 +1,5 @@
 #include "SequenceNode.h"
+#include "Utils.h"
 
 using namespace AeonBehaviorTree;
 
@@ -8,23 +9,20 @@ SequenceNode::SequenceNode(std::string name) : ControlNode(name)
 
 SequenceNode::~SequenceNode() {}
 
-void SequenceNode::Execute()
+void SequenceNode::Execute(BlackBoard * black_board)
 {
 	state = FAILURE;
-
+	Utils::Log("-- SequenceNode : ", name , " Execute");
 	for (auto child : childNodes)
 	{
-		if (child->type == Action)
+		child->Execute(black_board);
+		if (child->GetNodeState() != SUCCESS)
 		{
-			child->Execute();
-			if (child->GetNodeState() != SUCCESS)
-			{
-				return;
-				std::cout << " Sequence Node: " << name << " returning " << FAILURE << "!" << std::endl;
-			}	
-		}
+			return;
+			Utils::Log("-- Sequence Node: ", name, " returning ", FAILURE, "!");
+		}	
 	}
 
 	SetNodeState(SUCCESS);
-	std::cout << " Sequence Node: " << name << " returning " << SUCCESS << "!" << std::endl;
+	Utils::Log("-- Sequence Node: ", name, " returning ", SUCCESS, "!");
 }
