@@ -10,8 +10,9 @@ namespace AeonBehaviorTree
 	public:
 		// Constructor
 		PlayAction(std::string name);
-		~PlayAction();
+		~PlayAction() = default;
 				
+		// Execute implementation
 		virtual void Execute(BlackBoard * black_board);		
 	};
 }

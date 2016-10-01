@@ -8,9 +8,11 @@ namespace AeonBehaviorTree
 	class EatAction : public ActionNode
 	{
 	public:		
+		// Constructor
 		EatAction(std::string name);
-		~EatAction();
-
+		~EatAction() = default;
+		
+		// Execute implementation
 		virtual void Execute(BlackBoard * black_board);
 	};
 }

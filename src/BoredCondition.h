@@ -12,6 +12,7 @@ namespace AeonBehaviorTree
 		BoredCondition(std::string name);
 		~BoredCondition() = default;
 
+		// Execute implementation
 		virtual void Execute(BlackBoard * black_board);
 	};
 }

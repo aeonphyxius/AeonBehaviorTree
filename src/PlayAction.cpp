@@ -8,10 +8,6 @@ PlayAction::PlayAction(std::string name) : ActionNode(name)
 	SetNodeState(IDLE);
 }
 
-PlayAction::~PlayAction()
-{
-}
-
 void PlayAction::Execute(BlackBoard * black_board)
 {
 	Utils::Log("-- PlayAction : ", name, " Execute");

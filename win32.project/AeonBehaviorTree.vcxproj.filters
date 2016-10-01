@@ -87,13 +87,7 @@
     <ClCompile Include="..\src\Dog.cpp">
       <Filter>Source Files\Entities</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\TestConcurrentDogs.cpp">
-      <Filter>Source Files\Tests</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Test3ParallelDogs.cpp">
-      <Filter>Source Files\Tests</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\TestConcurrentDiffValues.cpp">
+    <ClCompile Include="..\src\main.cpp">
       <Filter>Source Files\Tests</Filter>
     </ClCompile>
   </ItemGroup>

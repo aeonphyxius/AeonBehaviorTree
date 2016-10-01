@@ -1,6 +1,3 @@
-/*#ifndef CONC_DIFF_VALUES_H
-#define CONC_DIFF_VALUES_H
-
 #include <iostream>
 #include "BehaviorTree.h"
 #include "SequenceNode.h"
@@ -16,13 +13,12 @@
 using namespace std;
 using namespace AeonBehaviorTree;
 
-
-
-namespace TestConcurrentDiffValues
+namespace TestConcurrentDogs
 {
 	const int DOGS_NUMBER = 5;
-	void ExecuteTestConcurrentDiffValues()
+	int ExecuteTestConcurrentDogs()
 	{
+		//std::vector< BehaviorTree *> myDogBehavior = std::vector<BehaviorTree*>();
 		BehaviorTree * myDogBehavior = new BehaviorTree();
 
 		std::vector<BlackBoard *> myBlackBoards = std::vector<BlackBoard*>();
@@ -31,7 +27,8 @@ namespace TestConcurrentDiffValues
 
 		for (unsigned int i = 0; i < DOGS_NUMBER; ++i)
 		{
-			dogs.push_back(new Dog(0.2f * i));
+			dogs.push_back(new Dog());
+			//myDogBehaviors.push_back(new BehaviorTree());
 			myBlackBoards.push_back(new BlackBoard());
 			roots.push_back(new SequenceNode("root_sel_node" + i));
 		}
@@ -69,7 +66,7 @@ namespace TestConcurrentDiffValues
 
 
 		system("pause");
-	}
 
+		return 0;
+	}
 }
-#endif /*CONC_DIFF_VALUES_H*/

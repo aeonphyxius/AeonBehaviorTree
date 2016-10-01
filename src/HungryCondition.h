@@ -11,7 +11,8 @@ namespace AeonBehaviorTree
 		// Constructor
 		HungryCondition(std::string name);
 		~HungryCondition() = default;
-
+		
+		// Execute implementation
 		virtual void Execute(BlackBoard * black_board);
 	};
 }
