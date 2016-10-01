@@ -13,6 +13,6 @@ EatAction::~EatAction()
 
 void EatAction::Execute(BlackBoard * black_board)
 {
-	black_board->entity->Eat(black_board->ticks);
+	black_board->entity->Eat();
 	SetNodeState(SUCCESS);
 }

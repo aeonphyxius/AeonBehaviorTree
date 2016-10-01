@@ -1,7 +1,6 @@
 #include <iostream>
 #include "BehaviorTree.h"
 #include "SequenceNode.h"
-#include "Utils.h"
 #include "Dog.h"
 #include "Entity.h"
 #include "BlackBoard.h"
@@ -24,7 +23,7 @@ int main()
 	EatAction *eat_node = new EatAction("eat_action");
 	rep_eating_node->setChild(eat_node);
 
-	RepeaterNode *rep_node_play = new RepeaterNode("rep_node_play", 5);
+	RepeaterNode *rep_node_play = new RepeaterNode("rep_node_play", 3);
 	PlayAction *play_node = new PlayAction("PlayAction");
 	rep_node_play->setChild(play_node);
 	
@@ -38,7 +37,7 @@ int main()
 
 
 	std::cout << std::endl << std::endl << std::endl;
-	Utils::Log(" Dog1 final status -> ENERGY: ", dog1->energy, "  LAST_PLAYED_TIME: ", dog1->last_played_time);
+	dog1->DebugValues();
 	system("pause");
 
 	return 0;
