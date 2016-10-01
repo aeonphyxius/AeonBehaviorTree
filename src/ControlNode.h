@@ -14,9 +14,9 @@ namespace AeonBehaviorTree
 		~ControlNode();
 
 		virtual void SetNodeState(NodeState new_state) { state = new_state; }
+		virtual NodeState GetNodeState() { return state; }
 		void AddChild(TreeNode* child);
-				
-		
+
 	protected:
 		// Children vector
 		std::vector<TreeNode*> child_nodes;
