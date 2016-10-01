@@ -5,8 +5,7 @@
 #include <string>
 #include "BlackBoard.h"
 namespace AeonBehaviorTree
-{	
-	enum NodeType { Action, Condition, Control };
+{		
 	//enum ColorNodeType { PARALLEL, SELECTOR, SEQUENCE, SEQUENCESTAR, SELECTORSTAR, ACTION, CONDITION, DECORATOR };
 	// Enumerates the states every node can be in after execution during a particular
 	// time step:
@@ -24,13 +23,10 @@ namespace AeonBehaviorTree
 		NodeState state;
 		NodeState ColorState;
 	public:
-		// Node name
-		std::string name;
-
-		// Node type
-		NodeType type;
-
-		// The constructor and the distructor
+		
+		std::string name;						// Node name
+			
+		
 		TreeNode(std::string node_name);
 		~TreeNode();
 

@@ -9,9 +9,58 @@
 #include "PlayAction.h"
 #include "SelectorNode.h"
 #include "HungryCondition.h"
+#include "InverterNode.h"
+#include "BoredCondition.h"
 
 using namespace std;
 using namespace AeonBehaviorTree;
+
+namespace TestInverter
+{
+	int ExecuteTest()
+	{
+		BehaviorTree * myDogBehavior = new BehaviorTree();
+		BlackBoard * myBlackBoard = new BlackBoard();
+
+		Entity *dog1 = new Dog();
+		
+		SequenceNode * root = new SequenceNode("root_sel_node");
+
+
+		RepeaterNode *rep_node_play = new RepeaterNode("rep_node_play", 5);
+		PlayAction *play_node = new PlayAction("PlayAction");
+		rep_node_play->setChild(play_node);
+		
+
+		SequenceNode * sequence = new SequenceNode("sequence_node");
+		BoredCondition * bored = new BoredCondition("bored_condition");
+		InverterNode * inverter = new InverterNode("inverter_node");
+		inverter->setChild(bored);
+
+		RepeaterNode *rep_eating_node = new RepeaterNode("rep_eating_node", 3);
+		EatAction *eat_node = new EatAction("eat_action");
+		rep_eating_node->setChild(eat_node);
+
+		sequence->AddChild(inverter);
+		sequence->AddChild(rep_eating_node);
+
+		
+		root->AddChild(rep_node_play);
+		root->AddChild(sequence);
+
+		myDogBehavior->AddRootNode(root);
+		myDogBehavior->Execute(dog1, myBlackBoard);
+		
+
+		std::cout << std::endl << std::endl << std::endl;
+		dog1->DebugValues();		
+		system("pause");
+
+		return 0;
+	}
+
+}
+
 
 namespace TestConcurrentDiffValues
 {	
@@ -175,9 +224,11 @@ namespace Test3ParallelDogs
 
 int main()
 {
-	Test3ParallelDogs::ExecuteTest();
+	TestInverter::ExecuteTest();
 
-	TestConcurrentDiffValues::ExecuteTestConcurrentDiffValues();
+	//Test3ParallelDogs::ExecuteTest();
 
-	TestConcurrentDogs::ExecuteTestConcurrentDogs();
+	//TestConcurrentDiffValues::ExecuteTestConcurrentDiffValues();
+
+	//TestConcurrentDogs::ExecuteTestConcurrentDogs();
 }
