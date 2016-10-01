@@ -7,11 +7,9 @@ namespace AeonBehaviorTree
 {
 	class SequenceNode : public ControlNode
 	{
-	public:
-		// Constructor
+	public:		
 		SequenceNode(std::string Name);
-		~SequenceNode();
-		virtual void SetNodeState(NodeState new_state) { state = new_state; }		
+		~SequenceNode();			
 		
 		void Execute(BlackBoard * black_board);
 	};

@@ -18,7 +18,8 @@ namespace AeonBehaviorTree
 		void SetNumRepeats(int repeats) { num_repeats = repeats; }
 
 	private:
-		int num_repeats;
+		unsigned int num_repeats;
+		unsigned int current;
 	};
 } 
 #endif /* REPEATER_NODE_H */

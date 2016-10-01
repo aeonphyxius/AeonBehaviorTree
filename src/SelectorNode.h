@@ -9,9 +9,7 @@ namespace AeonBehaviorTree
 	{
 	public:		
 		SelectorNode(std::string name);
-		~SelectorNode();
-		int GetType();
-		// The method that is going to be executed by the thread
+		~SelectorNode();	
 		void Execute(BlackBoard * black_board);
 	};
 }

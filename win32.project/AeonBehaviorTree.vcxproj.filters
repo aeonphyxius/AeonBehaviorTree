@@ -34,6 +34,9 @@
     <Filter Include="Source Files\DogBehaviors">
       <UniqueIdentifier>{ccc56b74-0814-40c5-ba4a-a07f024f504e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Entities">
+      <UniqueIdentifier>{032d239a-f10d-4a66-97a7-8a4a5a711bd9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\main.cpp">
@@ -63,17 +66,11 @@
     <ClCompile Include="..\src\ControlNode.cpp">
       <Filter>Source Files\Tree</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\LeafNode.cpp">
-      <Filter>Source Files\Tree</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\TreeNode.cpp">
       <Filter>Source Files\Tree</Filter>
     </ClCompile>
     <ClCompile Include="..\src\DecoratorNodecpp.cpp">
       <Filter>Source Files\Tree</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Dog.cpp">
-      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\src\PlayAction.cpp">
       <Filter>Source Files\DogBehaviors</Filter>
@@ -87,13 +84,13 @@
     <ClCompile Include="..\src\HungryCondition.cpp">
       <Filter>Source Files\DogBehaviors</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\Dog.cpp">
+      <Filter>Source Files\Entities</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\ActionNode.h">
       <Filter>Header Files\Nodes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\LeafNode.h">
-      <Filter>Header Files\Tree</Filter>
     </ClInclude>
     <ClInclude Include="..\src\TreeNode.h">
       <Filter>Header Files\Tree</Filter>

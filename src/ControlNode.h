@@ -13,33 +13,17 @@ namespace AeonBehaviorTree
 		ControlNode(std::string name);
 		~ControlNode();
 
-		// The method used to fill the child vector
+		virtual void SetNodeState(NodeState new_state) { state = new_state; }
 		void AddChild(TreeNode* child);
-
-		// The method used to know the number of children
-		unsigned int GetChildrenNumber();
-		void WriteState(NodeState StateToBeSet);
-
-		//std::vector<TreeNode*> GetChildren();
-		// The method used to interrupt the execution of the node
-		//bool Halt();
-		//void ResetColorState();
-		//void HaltChildren(int i);
-		//int GetDepth();
-
-		// Methods used to access the node state without the
-		// conditional waiting (only mutual access)
+				
 		
 	protected:
 		// Children vector
-		std::vector<TreeNode*> childNodes;
+		std::vector<TreeNode*> child_nodes;
 
-		// Children states
-		std::vector<NodeState> childStates;
-
-		// Vector size
-		unsigned int M;
-
+		unsigned int current;
+				
+		
 	};
 }
 

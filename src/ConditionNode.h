@@ -2,17 +2,18 @@
 #ifndef CONDITION_NODE_H
 #define CONDITION_NODE_H
 
-#include "LeafNode.h"
+#include "TreeNode.h"
 
 namespace AeonBehaviorTree
 {
-	class ConditionNode : public LeafNode
+	class ConditionNode : public TreeNode
 	{
 	public:		
 		ConditionNode(std::string name);
 		~ConditionNode() = default;
 				
 		virtual void Execute(BlackBoard * black_board) = 0;				
+		virtual void SetNodeState(NodeState new_state) { state = new_state; }
 	};
 }
 

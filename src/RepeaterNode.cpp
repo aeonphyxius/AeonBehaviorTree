@@ -6,12 +6,14 @@ using namespace AeonBehaviorTree;
 RepeaterNode::RepeaterNode(std::string name) : 
 DecoratorNode(name)
 , num_repeats(0)
+, current(0)
 {
 }
 
 RepeaterNode::RepeaterNode(std::string name, int num_repeats) : 
   DecoratorNode(name)
 , num_repeats(num_repeats)
+, current(0)
 {
 }
 
@@ -30,13 +32,22 @@ void RepeaterNode::Execute(BlackBoard * black_board)
 		return;
 	}
 
-	Utils::Log(" RepeaterNode Node: ", name, " starting repetitions");
-	for (unsigned short i = 0; i < num_repeats; ++i)
-	{		
-		childNode->Execute(black_board);
-		++black_board->ticks;
-	}
+	Utils::Log(" RepeaterNode Node: ", name, " repetition: " , current );
+	
+	childNode->Execute(black_board);
 
-	SetNodeState(childNode->GetNodeState());		
-	Utils::Log(" RepeaterNode Node: ", name, " returning ", state, "as the last rep. state");
+	if (childNode->GetNodeState() == FAILURE || childNode->GetNodeState() == SUCCESS)
+	{
+		++current;
+	}
+	
+	if (current < num_repeats)
+	{
+		SetNodeState(RUNNING);
+	}
+	else
+	{
+		SetNodeState(childNode->GetNodeState());
+		Utils::Log(" RepeaterNode Node: ", name, " returning ", state, "as the last rep. state");
+	}
 }

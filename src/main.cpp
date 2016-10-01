@@ -7,6 +7,8 @@
 #include "RepeaterNode.h"
 #include "EatAction.h"
 #include "PlayAction.h"
+#include "SelectorNode.h"
+#include "HungryCondition.h"
 
 using namespace std;
 using namespace AeonBehaviorTree;
@@ -18,6 +20,14 @@ int main()
 	Entity *dog1 = new Dog();
 
 	SequenceNode * root = new SequenceNode("root_sel_node");		
+
+	SelectorNode * sel_node = new SelectorNode("sel_node");
+	HungryCondition * hun_con1 = new HungryCondition("hun_con1");
+	HungryCondition * hun_con2 = new HungryCondition("hun_con2");
+
+	sel_node->AddChild(hun_con1);
+	sel_node->AddChild(hun_con2);
+	root->AddChild(sel_node);
 
 	RepeaterNode *rep_eating_node = new RepeaterNode("rep_eating_node", 5);
 	EatAction *eat_node = new EatAction("eat_action");

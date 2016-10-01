@@ -2,7 +2,7 @@
 
 using namespace AeonBehaviorTree;
 
-ConditionNode::ConditionNode(std::string name) : LeafNode(name)
+ConditionNode::ConditionNode(std::string name) : TreeNode(name)
 {
 	type = Condition;
 }

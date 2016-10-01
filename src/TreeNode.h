@@ -38,8 +38,6 @@ namespace AeonBehaviorTree
 		// (conditional waiting and mutual access)
 		NodeState GetNodeState();
 		
-		
-		
 		// The method that is going to be executed by the thread
 		virtual void Execute(BlackBoard * black_board) = 0;
 		virtual void SetNodeState(NodeState new_state) = 0;
