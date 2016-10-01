@@ -58,5 +58,67 @@ void BehaviorTree::Execute(Entity * entity, BlackBoard * black_board)
 			return;
 		}
 	}
-
 }
+
+
+void BehaviorTree::Execute(std::vector <Entity *> &entites, std::vector <BlackBoard *> &black_boards, std::vector <ControlNode*> &roots)
+{	
+	bool isEnded = false;
+	Utils::Log("Start Behavior Tree!");
+
+	if (roots.empty())
+	{
+		Utils::Log("A root node should be assigned before executing the BT !");
+		return;
+	}
+
+	if (entites.empty())
+	{
+		Utils::Log("An entity is needed to execute the BT !");
+		return;
+	}
+	
+
+	if (black_boards.empty())
+	{
+		black_boards = std::vector <BlackBoard*>();
+		for (unsigned int i = 0; i < entites.size(); ++i)
+		{
+			black_boards.push_back(new BlackBoard());			
+		}
+		Utils::Log("BlackBoard was null, creating a new one !");
+	}
+
+	for (unsigned int i = 0; i < black_boards.size(); ++i)
+	{
+		black_boards[i]->ticks = 0.0f;
+		black_boards[i]->entity =entites[i];
+	}
+		
+
+
+	while (true)
+	{
+		Utils::Log("Ticking the root node !");
+		for (unsigned int i = 0; i < black_boards.size(); ++i)
+			++black_boards[i]->ticks;
+
+		Utils::Log("Execute");
+		isEnded = true;
+		for (unsigned int i = 0; i < black_boards.size(); ++i)
+		{
+			roots[i]->Execute(black_boards[i]);
+			if (roots[i]->GetNodeState() != RUNNING && isEnded)
+				isEnded = true;
+			else
+				isEnded = false;
+		}
+		
+		if (isEnded)
+		{
+			Utils::Log("Execution ended :)");
+			return;
+		}
+	}
+}
+

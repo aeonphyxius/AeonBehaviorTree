@@ -86,11 +86,13 @@
     <ClCompile Include="..\src\EatAction.cpp" />
     <ClCompile Include="..\src\HungryCondition.cpp" />
     <ClCompile Include="..\src\InverterNode.cpp" />
-    <ClCompile Include="..\src\main.cpp" />
+    <ClCompile Include="..\src\Test3ParallelDogs.cpp" />
     <ClCompile Include="..\src\PlayAction.cpp" />
     <ClCompile Include="..\src\RepeaterNode.cpp" />
     <ClCompile Include="..\src\SelectorNode.cpp" />
     <ClCompile Include="..\src\SequenceNode.cpp" />
+    <ClCompile Include="..\src\TestConcurrentDiffValues.cpp" />
+    <ClCompile Include="..\src\TestConcurrentDogs.cpp" />
     <ClCompile Include="..\src\TreeNode.cpp" />
   </ItemGroup>
   <ItemGroup>

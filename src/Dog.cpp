@@ -10,6 +10,14 @@ Dog::Dog() : Entity()
 	last_played_time = 0.0f;
 }
 
+Dog::Dog(float energy_value) : 
+Entity()
+, energy(energy_value)
+{	
+	last_played_time = 0.0f;
+}
+
+
 bool Dog::IsHungry() const 
 { 
 	return energy <= THRESHOLD; 

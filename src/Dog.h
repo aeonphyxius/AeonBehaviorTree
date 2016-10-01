@@ -9,6 +9,7 @@ namespace AeonBehaviorTree
 	{
 	public: 
 		Dog();
+		Dog(float energy);
 		~Dog() = default;
 
 		virtual bool IsHungry() const;
