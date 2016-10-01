@@ -78,11 +78,13 @@
   <ItemGroup>
     <ClCompile Include="..\src\ActionNode.cpp" />
     <ClCompile Include="..\src\BehaviorTree.cpp" />
+    <ClCompile Include="..\src\BoredCondition.cpp" />
     <ClCompile Include="..\src\ConditionNode.cpp" />
     <ClCompile Include="..\src\ControlNode.cpp" />
     <ClCompile Include="..\src\DecoratorNodecpp.cpp" />
     <ClCompile Include="..\src\Dog.cpp" />
     <ClCompile Include="..\src\EatAction.cpp" />
+    <ClCompile Include="..\src\HungryCondition.cpp" />
     <ClCompile Include="..\src\InverterNode.cpp" />
     <ClCompile Include="..\src\LeafNode.cpp" />
     <ClCompile Include="..\src\main.cpp" />

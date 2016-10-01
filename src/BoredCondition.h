@@ -16,4 +16,4 @@ namespace AeonBehaviorTree
 	};
 }
 
-#endif
+#endif /*BORED_CONDITION_H*/

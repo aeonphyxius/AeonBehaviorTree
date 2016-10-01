@@ -79,7 +79,13 @@
       <Filter>Source Files\DogBehaviors</Filter>
     </ClCompile>
     <ClCompile Include="..\src\EatAction.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\DogBehaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\BoredCondition.cpp">
+      <Filter>Source Files\DogBehaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\HungryCondition.cpp">
+      <Filter>Source Files\DogBehaviors</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

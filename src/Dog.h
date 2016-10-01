@@ -14,7 +14,7 @@ namespace AeonBehaviorTree
 		virtual bool IsHungry() const;
 		virtual void Eat();
 		virtual void Play(const float time);
-		virtual bool Bored(const float time) const;
+		virtual bool IsBored(const float time) const;
 		virtual void DebugValues()const;
 
 	private:

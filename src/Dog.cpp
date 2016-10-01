@@ -29,7 +29,7 @@ void Dog::Play(const float time)
 	last_played_time = time;
 }
 
-bool Dog::Bored(const float time) const
+bool Dog::IsBored(const float time) const
 { 
 	return time - last_played_time > BORED_THRESHOLD; 
 }
