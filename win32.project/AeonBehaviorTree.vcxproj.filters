@@ -19,6 +19,12 @@
     <Filter Include="Source Files\Nodes">
       <UniqueIdentifier>{c21fbdc3-1f6f-4bf1-b5bf-1cabf3799539}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Tree">
+      <UniqueIdentifier>{3ee2e694-aa19-4496-a64b-e8d7c5b5cfa1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Tree">
+      <UniqueIdentifier>{bf2b142e-bf88-44c5-b660-fd823c2d3269}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\main.cpp">
@@ -27,10 +33,73 @@
     <ClCompile Include="..\src\ActionNode.cpp">
       <Filter>Source Files\Nodes</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\ConditionNode.cpp">
+      <Filter>Source Files\Nodes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\SelectorNode.cpp">
+      <Filter>Source Files\Nodes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\BehaviorTree.cpp">
+      <Filter>Source Files\Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\SequenceNode.cpp">
+      <Filter>Source Files\Nodes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\InverterNode.cpp">
+      <Filter>Source Files\Nodes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\RepeaterNode.cpp">
+      <Filter>Source Files\Nodes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ControlNode.cpp">
+      <Filter>Source Files\Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\LeafNode.cpp">
+      <Filter>Source Files\Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\TreeNode.cpp">
+      <Filter>Source Files\Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\DecoratorNodecpp.cpp">
+      <Filter>Source Files\Tree</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\ActionNode.h">
       <Filter>Header Files\Nodes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\LeafNode.h">
+      <Filter>Header Files\Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\TreeNode.h">
+      <Filter>Header Files\Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ConditionNode.h">
+      <Filter>Header Files\Nodes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SelectorNode.h">
+      <Filter>Header Files\Nodes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SequenceNode.h">
+      <Filter>Header Files\Nodes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ControlNode.h">
+      <Filter>Header Files\Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\BehaviorTree.h">
+      <Filter>Header Files\Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\InverterNode.h">
+      <Filter>Header Files\Nodes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\DecoratorNode.h">
+      <Filter>Header Files\Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RepeaterNode.h">
+      <Filter>Header Files\Nodes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Utils.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

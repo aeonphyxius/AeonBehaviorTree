@@ -77,10 +77,31 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\src\ActionNode.cpp" />
+    <ClCompile Include="..\src\BehaviorTree.cpp" />
+    <ClCompile Include="..\src\ConditionNode.cpp" />
+    <ClCompile Include="..\src\ControlNode.cpp" />
+    <ClCompile Include="..\src\DecoratorNodecpp.cpp" />
+    <ClCompile Include="..\src\InverterNode.cpp" />
+    <ClCompile Include="..\src\LeafNode.cpp" />
     <ClCompile Include="..\src\main.cpp" />
+    <ClCompile Include="..\src\RepeaterNode.cpp" />
+    <ClCompile Include="..\src\SelectorNode.cpp" />
+    <ClCompile Include="..\src\SequenceNode.cpp" />
+    <ClCompile Include="..\src\TreeNode.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\ActionNode.h" />
+    <ClInclude Include="..\src\BehaviorTree.h" />
+    <ClInclude Include="..\src\ConditionNode.h" />
+    <ClInclude Include="..\src\ControlNode.h" />
+    <ClInclude Include="..\src\DecoratorNode.h" />
+    <ClInclude Include="..\src\InverterNode.h" />
+    <ClInclude Include="..\src\LeafNode.h" />
+    <ClInclude Include="..\src\RepeaterNode.h" />
+    <ClInclude Include="..\src\SelectorNode.h" />
+    <ClInclude Include="..\src\SequenceNode.h" />
+    <ClInclude Include="..\src\TreeNode.h" />
+    <ClInclude Include="..\src\Utils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
