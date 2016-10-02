@@ -13,7 +13,7 @@ namespace AeonBehaviorTree
 		~EatAction() = default;
 		
 		// Execute implementation
-		virtual void Execute(BlackBoard * black_board);
+		virtual void Execute(std::shared_ptr<BlackBoard> black_board);
 	};
 }
 

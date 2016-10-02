@@ -4,6 +4,8 @@
 #include <iostream>
 #include <string>
 #include "BlackBoard.h"
+#include <vector>
+
 namespace AeonBehaviorTree
 {	
 	
@@ -24,13 +26,16 @@ namespace AeonBehaviorTree
 				
 		TreeNode(std::string node_name);
 		~TreeNode();
-				
-		virtual void Execute(BlackBoard * black_board) = 0;
+		
+		virtual void AddChild(std::shared_ptr <TreeNode> child);
+		virtual void Execute(std::shared_ptr<BlackBoard> black_board) = 0;
 		virtual void SetNodeState(NodeState new_state) = 0;
 		virtual NodeState GetNodeState() = 0;
+		
 
 	protected:
-		NodeState state;
+		NodeState state;		
+		std::vector<std::shared_ptr <TreeNode>> child_nodes;
 	};
 }
 

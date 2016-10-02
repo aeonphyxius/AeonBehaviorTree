@@ -12,15 +12,16 @@ namespace AeonBehaviorTree
 	
 		DecoratorNode(std::string name);
 		~DecoratorNode() = default;
-		void setChild(TreeNode * newChild) { child = newChild; }
+				
+		virtual void AddChild(std::shared_ptr <TreeNode> child);
 		virtual void SetNodeState(NodeState new_state) { state = new_state; }
 		virtual NodeState GetNodeState() { return state; }
+		virtual void Execute(std::shared_ptr<BlackBoard> black_board) = 0;
 	
 	protected:
-		TreeNode* getChild() const { return child; }
-
-	private:
-		TreeNode* child;
+		std::shared_ptr <TreeNode> getChild() const { return child_nodes[0]; }
+			
+		
 	};
 }
 #endif /* DECORATOR_NODE_H */

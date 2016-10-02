@@ -7,7 +7,7 @@ SelectorNode::SelectorNode(std::string name) : ControlNode(name)
 }
 
 
-void SelectorNode::Execute(BlackBoard * black_board)
+void SelectorNode::Execute(std::shared_ptr<BlackBoard> black_board)
 {
 	Utils::Log("-- SelectorNode : ", name, " Execute");
 	if (child_nodes.size() == 0)

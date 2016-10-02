@@ -11,7 +11,7 @@ namespace AeonBehaviorTree
 		SequenceNode(std::string Name);
 		~SequenceNode() = default;
 		
-		void Execute(BlackBoard * black_board);
+		virtual void Execute(std::shared_ptr<BlackBoard> black_board);
 	};
 }
 

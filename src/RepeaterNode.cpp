@@ -18,10 +18,10 @@ RepeaterNode::RepeaterNode(std::string name, int num_repeats) :
 }
 
 
-void RepeaterNode::Execute(BlackBoard * black_board)
+void RepeaterNode::Execute(std::shared_ptr<BlackBoard> black_board)
 {
-	TreeNode *childNode = getChild();
-	if (childNode == nullptr || num_repeats < 0)
+	std::shared_ptr<TreeNode>  child_node = getChild();
+	if (child_node == nullptr || num_repeats < 0)
 	{
 		SetNodeState(FAILURE);
 		Utils::Log(" RepeaterNode Node: ", name, " returning ", FAILURE, "! because no child or num_repeats < 0)");
@@ -37,16 +37,16 @@ void RepeaterNode::Execute(BlackBoard * black_board)
 
 	Utils::Log(" RepeaterNode Node: ", name, " repetition: " , current );
 	
-	childNode->Execute(black_board);
+	child_node->Execute(black_board);
 
-	if (childNode->GetNodeState() == FAILURE || childNode->GetNodeState() == SUCCESS)
+	if (child_node->GetNodeState() == FAILURE || child_node->GetNodeState() == SUCCESS)
 	{
 		++current;
 	}
 	
 	if (current >= num_repeats)
 	{		
-		SetNodeState(childNode->GetNodeState());
+		SetNodeState(child_node->GetNodeState());
 		Utils::Log(" RepeaterNode Node: ", name, " returning ", state, "as the last rep. state");
 	}
 }

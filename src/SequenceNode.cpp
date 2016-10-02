@@ -8,7 +8,7 @@ ControlNode(name)
 {	
 }
 
-void SequenceNode::Execute(BlackBoard * black_board)
+void SequenceNode::Execute(std::shared_ptr<BlackBoard> black_board)
 {
 	Utils::Log("-- SequenceNode : ", name, " Execute");
 	if (child_nodes.size() == 0)

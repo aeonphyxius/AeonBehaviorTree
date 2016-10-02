@@ -6,20 +6,20 @@ InverterNode::InverterNode(std::string name) : DecoratorNode(name)
 {
 }
 
-void InverterNode::Execute(BlackBoard * black_board)
+void InverterNode::Execute(std::shared_ptr<BlackBoard> black_board)
 {
-	TreeNode *childNode = getChild();
-	if (childNode == nullptr)
+	std::shared_ptr<TreeNode> child_node = getChild();
+	if (child_node == nullptr)
 	{
 		SetNodeState(FAILURE);
 		Utils::Log( " InverterNode Node: ",name," returning ",FAILURE, "! because no child");
 		return;
 	}
 
-	childNode->Execute(black_board);
-	SetNodeState(childNode->GetNodeState());
+	child_node->Execute(black_board);
+	SetNodeState(child_node->GetNodeState());
 
-	if (childNode->GetNodeState() != SUCCESS)
+	if (child_node->GetNodeState() != SUCCESS)
 		Utils::Log(" InverterNode Node: ", name, " returning ", FAILURE, "!");
 	else
 		Utils::Log(" InverterNode Node: ", name, " returning ", SUCCESS, "!");

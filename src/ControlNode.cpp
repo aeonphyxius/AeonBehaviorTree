@@ -9,14 +9,3 @@ ControlNode::ControlNode(std::string name)
 	state = IDLE;
 }
 
-void ControlNode::AddChild(TreeNode* child)
-{
-
-	if (Utils::ContainsChild(child_nodes, child))
-	{		
-		return;
-	}		
-
-	child_nodes.push_back(child);
-}
-

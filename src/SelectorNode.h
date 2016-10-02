@@ -10,7 +10,7 @@ namespace AeonBehaviorTree
 	public:		
 		SelectorNode(std::string name);
 		~SelectorNode() = default;
-		void Execute(BlackBoard * black_board);
+		void Execute(std::shared_ptr<BlackBoard> black_board);
 	};
 }
 

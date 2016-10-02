@@ -4,7 +4,8 @@
 #include "BlackBoard.h"
 #include "ControlNode.h"
 #include "Entity.h"
-
+#include <iostream>
+#include <memory>
 
 namespace AeonBehaviorTree
 {
@@ -14,13 +15,16 @@ namespace AeonBehaviorTree
 		BehaviorTree();
 		~BehaviorTree();
 
-		void Execute(Entity *dog, BlackBoard * black_board);				
-		void BehaviorTree::Execute(std::vector <Entity *> &entites, std::vector <BlackBoard *> &black_boards, std::vector <ControlNode*> &roots);
+		typedef std::shared_ptr<BlackBoard> BlackBoardSharedPtr;
+		typedef std::shared_ptr<Entity> EntitySharedPtr;
 
-		void AddRootNode( ControlNode * new_root_node);
+		void Execute(std::shared_ptr<Entity> entity, std::shared_ptr<BlackBoard> black_board);
+		void Execute(std::vector <EntitySharedPtr> &entites, std::vector <BlackBoardSharedPtr> &black_boards, std::vector <ControlNode*> &roots);
 
-	private: 
-		ControlNode * root;
+		void AddRootNode(std::shared_ptr <ControlNode> new_root_node);
+		
+	private: 		
+		std::shared_ptr<ControlNode> root;
 	};
 }
 

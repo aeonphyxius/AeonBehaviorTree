@@ -14,12 +14,12 @@ BehaviorTree::~BehaviorTree()
 	root = nullptr;
 }
 
-void BehaviorTree::AddRootNode(ControlNode * new_root_node)
+void BehaviorTree::AddRootNode(std::shared_ptr<ControlNode> new_root_node)
 {
 	root = new_root_node;
 }
 
-void BehaviorTree::Execute(Entity * entity, BlackBoard * black_board)
+void BehaviorTree::Execute(std::shared_ptr<Entity> entity, std::shared_ptr<BlackBoard> black_board)
 {
 	Utils::Log("Start Behavior Tree!");
 
@@ -38,9 +38,9 @@ void BehaviorTree::Execute(Entity * entity, BlackBoard * black_board)
 	black_board->ticks = 0.0f;
 
 	if (black_board == nullptr)
-	{
-		black_board = new BlackBoard();
-		Utils::Log("BlackBoard was null, creating a new one !");		
+	{		
+		Utils::Log("BlackBoard was null, exiting ... !");		
+		return;
 	}
 
 
@@ -61,7 +61,7 @@ void BehaviorTree::Execute(Entity * entity, BlackBoard * black_board)
 }
 
 
-void BehaviorTree::Execute(std::vector <Entity *> &entites, std::vector <BlackBoard *> &black_boards, std::vector <ControlNode*> &roots)
+void BehaviorTree::Execute(std::vector <EntitySharedPtr> &entites, std::vector <BlackBoardSharedPtr> &black_boards, std::vector <ControlNode*> &roots)
 {	
 	bool isEnded = false;
 	Utils::Log("Start Behavior Tree!");
@@ -81,10 +81,10 @@ void BehaviorTree::Execute(std::vector <Entity *> &entites, std::vector <BlackBo
 
 	if (black_boards.empty())
 	{
-		black_boards = std::vector <BlackBoard*>();
+		black_boards = std::vector <BlackBoardSharedPtr>();
 		for (unsigned int i = 0; i < entites.size(); ++i)
 		{
-			black_boards.push_back(new BlackBoard());			
+			black_boards.push_back(std::unique_ptr<BlackBoard>());
 		}
 		Utils::Log("BlackBoard was null, creating a new one !");
 	}
@@ -92,7 +92,7 @@ void BehaviorTree::Execute(std::vector <Entity *> &entites, std::vector <BlackBo
 	for (unsigned int i = 0; i < black_boards.size(); ++i)
 	{
 		black_boards[i]->ticks = 0.0f;
-		black_boards[i]->entity =entites[i];
+		black_boards[i]->entity = entites[i];
 	}
 		
 

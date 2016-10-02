@@ -8,7 +8,7 @@ EatAction::EatAction(std::string name) : ActionNode(name)
 	SetNodeState(IDLE);
 }
 
-void EatAction::Execute(BlackBoard * black_board)
+void EatAction::Execute(std::shared_ptr<BlackBoard> black_board)
 {
 	Utils::Log("-- EatAction : ", name, " Execute");
 	black_board->entity->Eat();

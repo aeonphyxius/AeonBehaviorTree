@@ -12,14 +12,16 @@ namespace AeonBehaviorTree
 	public:		
 		ControlNode(std::string name);
 		~ControlNode() = default;
-
+				
 		virtual void SetNodeState(NodeState new_state) { state = new_state; }
 		virtual NodeState GetNodeState() { return state; }
-		void AddChild(TreeNode* child);
+
+		virtual void Execute(std::shared_ptr<BlackBoard> black_board) = 0;
+		
+		
 
 	protected:
-		// Children vector
-		std::vector<TreeNode*> child_nodes;
+		
 
 		unsigned int current;
 				

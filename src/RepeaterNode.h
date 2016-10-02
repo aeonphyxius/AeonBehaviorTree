@@ -14,7 +14,7 @@ namespace AeonBehaviorTree
 		RepeaterNode(std::string name, int num_repeats);
 		~RepeaterNode() = default;
 
-		void Execute(BlackBoard * black_board);
+		virtual void Execute(std::shared_ptr<BlackBoard> black_board);
 		void SetNumRepeats(int repeats) { num_repeats = repeats; }
 
 	private:

@@ -15,7 +15,7 @@ namespace AeonBehaviorTree
 		virtual void SetNodeState(NodeState new_state) { state = new_state; }
 		virtual NodeState GetNodeState() { return state; }
 
-		virtual void Execute(BlackBoard * black_board) = 0;
+		virtual void Execute(std::shared_ptr<BlackBoard> black_board) = 0;
 	};
 }
 

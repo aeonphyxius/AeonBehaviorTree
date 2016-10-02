@@ -2,6 +2,7 @@
 #define HUNGRY_CONDITION_H
 
 #include "ConditionNode.h"
+#include <memory>
 
 namespace AeonBehaviorTree
 {
@@ -13,7 +14,7 @@ namespace AeonBehaviorTree
 		~HungryCondition() = default;
 		
 		// Execute implementation
-		virtual void Execute(BlackBoard * black_board);
+		virtual void Execute(std::shared_ptr<BlackBoard> black_board);
 	};
 }
 
